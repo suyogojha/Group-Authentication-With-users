@@ -1,0 +1,72 @@
+
+
+
+<section id="sidebar">
+    <a href="" class="brand">
+        <i class='bx'></i>
+        <span class="text"><img style="height:100px; margin-top:60px;" src="/static/images/icon/International-School-of-Management-and-Technology--ISMT.png" alt=""></span>
+    </a>
+    <ul class="side-menu top">
+
+        {% if request.user.is_active %}
+        <li>
+            <a href="{% url 'faculty:Faculty_Dashboard' %}">
+                <i class='bx bxs-dashboard' ></i>
+                <span class="text">Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'faculty:Faculty_1' %}">
+                <i class='bx bxs-shopping-bag-alt' ></i>
+                <span class="text">My Store</span>
+            </a>
+        </li>
+       
+        <li>
+            <a href="{% url 'faculty:Faculty_2' %}">
+                <i class='bx bxs-doughnut-chart' ></i>
+                <span class="text">Analytics</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'faculty:Faculty_3' %}">
+                <i class='bx bxs-message-dots' ></i>
+                <span class="text">Message</span>
+            </a>
+        </li>
+        <li>
+            <a  href="{% url 'faculty:Faculty_4' %}">
+                <i class='bx bxs-group' ></i>
+                <span class="text">Team</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bxs-cog' ></i>
+                <span class="text">Settings</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'home:logoutUser' %}" class="logout">
+                <i class='bx bxs-log-out-circle' ></i>
+                <span class="text">Logout</span>
+            </a>
+        </li>
+        {% else %}
+        <li>
+            <a href="/">
+                <i class='bx bxs-dashboard' ></i>
+                <span class="text">Home</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'home:LogIn' %}">
+                <i class='bx bxs-cog' ></i>
+                <span class="text">Login</span>
+            </a>
+        </li>
+   {% endif %}
+     
+    </ul>
+</section>

@@ -1,0 +1,86 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+    body{
+        background-image: linear-gradient(151.71167451638723deg, rgba(247, 213, 219,1) 18.316023342687227%,rgba(247, 213, 219,1) 18.72403523098939%,rgba(223, 240, 235,1) 67.27744993894673%);      ;
+    }
+    .forget-pwd > a{
+        color: #dc3545;
+        font-weight: 500;
+    }
+    .forget-password .panel-default{
+        padding: 31%;
+        margin-top: -27%;
+    }
+    .forget-password .panel-body{
+        padding: 15%;
+        margin-bottom: -50%;
+        background-image:linear-gradient(156.3752169616729deg, rgba(230, 228, 237,1) 25.63056340203441%,rgba(230, 228, 237,1) 25.954500117240627%,rgba(238, 240, 223,1) 64.50296922678055%);
+        border-radius: 5px;
+        -webkit-box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    img{
+        width:40%;
+        margin-bottom:10%;
+    }
+    .btnForget{
+        background: #c0392b;
+        border:none;
+    }
+    .forget-password .dropdown{
+        width: 100%;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+    }
+    .forget-password .dropdown button{
+        width: 100%;
+    }
+    .forget-password .dropdown ul{
+        width: 100%;
+    }
+</style>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container forget-password">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <img src="/static/images/keyword-research.svg" alt="car-key" border="0">
+                                <form id="register-form" role="form" autocomplete="off" class="form" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <span style="width: 50px;" class="input-group-text" id="basic-addon1"><img style="width: 28px;" src="/static/images/user.svg" alt=""></span>
+                                        <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <span style="width: 50px;" class="input-group-text" id="basic-addon1"><img style="width: 28px;" src="/static/images/key.svg" alt=""></span>
+                                        <input type="password" name="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input name="btnForget" class="btn btn-lg btn-primary btn-block btnForget" value="Login" type="submit">
+                                        <a class="btn btn-xl btn-success btn-block btnForget" href="/">Back</a>
+                                    </div>
+                                    <div>
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="alert alert-danger">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
